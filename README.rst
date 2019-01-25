@@ -98,21 +98,21 @@ Needed: ``pyenv`` and the plugin ``pyenv-virtualenv``.
 
 2. Install extras ``pip install .[testing]``
 
-2. Install the needed Python versions using ``pyenv``: ``3.4``, ``3.5``, ``3.6``, ``3.7``
+3. Install the needed Python versions using ``pyenv``: ``3.4``, ``3.5``, ``3.6``, ``3.7``
 
-3. Setup virtualenvs for all but the Python version you are using, for example if you use ``3.4``
+4. Setup virtualenvs for all but the Python version you are using, for example if you use ``3.4``
 
-::
+    ::
 
       $ pyenv virtualenv -p python3.5 3.5.6 py35
       $ pyenv virtualenv -p python3.6 3.6.6 py36
       $ pyenv virtualenv -p python3.7 3.7.1 py37
 
-4. Activate everything and run `tox`:
+5. Activate everything and run `tox`:
 
-::
+    ::
 
-  $ pyenv shell py35 py36 py37
-  $ source ./venv/bin/activate
-  $ tox
+      $ pyenv shell py35 py36 py37
+      $ source ./venv/bin/activate
+      $ tox
 

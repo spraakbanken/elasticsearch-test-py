@@ -3,4 +3,6 @@ venv
 __pycache__
 .idea
 .tox
+_build
+dist
 

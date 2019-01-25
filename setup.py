@@ -34,7 +34,6 @@ setup(
     extras_require=dict(
         testing=[
             'tox',
-            'doctuils',
             'pytest',
             'requests',
             'coverage'

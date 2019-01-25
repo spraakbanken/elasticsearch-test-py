@@ -7,6 +7,8 @@ import random
 import json
 from urllib.request import urlopen
 
+name = "elasticsearch_test"
+
 
 class ElasticsearchTest:
 
