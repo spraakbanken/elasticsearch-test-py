@@ -5,7 +5,12 @@ import subprocess
 import string
 import random
 import json
-from urllib.request import urlopen
+
+try:
+    from urllib.request import urlopen
+except ImportError:
+    # Python 2
+    from urllib import urlopen
 
 name = "elasticsearch_test"
 
