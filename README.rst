@@ -98,21 +98,27 @@ Needed: ``pyenv`` and the plugin ``pyenv-virtualenv``.
 
 2. Install extras ``pip install .[testing]``
 
-3. Install the needed Python versions using ``pyenv``: ``3.4``, ``3.5``, ``3.6``, ``3.7``
+3. Install the needed Python versions using ``pyenv``: ``3.8``, ``3.9``, ``3.10``, ``3.11``
 
-4. Setup virtualenvs for all but the Python version you are using, for example if you use ``3.4``
-
-    ::
-
-      $ pyenv virtualenv -p python3.5 3.5.6 py35
-      $ pyenv virtualenv -p python3.6 3.6.6 py36
-      $ pyenv virtualenv -p python3.7 3.7.1 py37
-
-5. Activate everything and run `tox`:
+4. Setup virtualenvs for all but the Python version you are using, for example if you use ``3.8``
 
     ::
 
-      $ pyenv shell py35 py36 py37
+      $ pyenv virtualenv -p python3.9 3.9.8 py39
+      $ pyenv virtualenv -p python3.10 3.10.8 py310
+      $ pyenv virtualenv -p python3.11 3.11.0 py311
+
+5. Setup path to Elasticsearch
+
+    ::
+
+      $ export ES_HOME=/opt/elasticsearch-6.8.23/
+
+6. Activate everything and run `tox`:
+
+    ::
+
+      $ pyenv shell py39 py310 py311
       $ source ./venv/bin/activate
       $ tox
 
