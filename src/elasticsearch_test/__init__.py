@@ -6,11 +6,7 @@ import string
 import random
 import json
 
-try:
-    from urllib.request import urlopen
-except ImportError:
-    # Python 2
-    from urllib import urlopen
+from urllib.request import urlopen
 
 name = "elasticsearch_test"
 
