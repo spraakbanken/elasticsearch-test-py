@@ -42,19 +42,11 @@ class ElasticsearchTest:
         except Exception:
             raise RuntimeError('Failed to start Elasticsearch')
         if block:
-            line = ''
             while True:
-                out = self.process.stdout.read(1)
-                if out == b'' and self.process.poll() is not None:
+                line = self.process.stdout.readline().decode()
+                if line == '' and self.process.poll() is not None:
                     raise RuntimeError('Failed to start Elasticsearch')
-                if out:
-                    char = out.decode()
-                    if char != '\n':
-                        line += char
-                    else:
-                        line = ''
-
-                if 'started' in line:
+                if 'Node' in line and 'started' in line:
                     self.started = True
                     break
 
